@@ -1,0 +1,3 @@
+The Lion King; Allers; Roger; 1994; Walt Disney; 45000000; 968500000; 923500000
+Frozen; Buck; Chris; 2013; Walt Disney; 150000000; 1280000000; 1130000000
+Spirited Away; Miyazaki; Hayao; 2001; Studio Ghibli; 19000000; 395000000; 376000000

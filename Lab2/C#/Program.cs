@@ -1,12 +1,11 @@
 ﻿class Program
 {
-/*
-2.1. Використовуючи генератор псевдовипадкових послідовностей чисел задати елементи матриці (матриць)
-в діапазоні -50…+49. Задано дві матриці A(n,n) і B(n,n) n=4. 
-Розробити програму, яка будує матрицю X(n,n) множенням елементів кожного рядка першої матриці 
-на найменше із значень елементів відповідного рядка другої матриці.
-*/
-
+    /*
+    2.1. Використовуючи генератор псевдовипадкових послідовностей чисел задати елементи матриці (матриць)
+    в діапазоні -50…+49. Задано дві матриці A(n,n) і B(n,n) n=4. 
+    Розробити програму, яка будує матрицю X(n,n) множенням елементів кожного рядка першої матриці 
+    на найменше із значень елементів відповідного рядка другої матриці.
+    */
     static void Task1()
     {
         Random rnd = new Random();
@@ -27,6 +26,7 @@
             int minB = B[i, 0];
             for (int j = 1; j < n; j++)
                 if (B[i, j] < minB) minB = B[i, j];
+
             for (int j = 0; j < n; j++)
                 X[i, j] = A[i, j] * minB;
         }
@@ -38,34 +38,34 @@
         }
     }
 
-    /*
+/*
 2.2. Дано зубчастий масив з n рядків, у рядках по m[j (j=1..n) елементів. 
 Для кожного стовпця підрахувати суму парних додатних елементів і записати дані в новий масив.
 */
 
-    static void Task2() 
+    static void Task2()
     {
         Random rnd = new Random();
         int n = rnd.Next(3, 6);
-        int[][] jagged = new int[n][];
+        int[][] arr = new int[n][];
         for (int i = 0; i < n; i++)
         {
             int m = rnd.Next(3, 7);
-            jagged[i] = new int[m];
-            for (int j = 0; j < m; j++) jagged[i][j] = rnd.Next(-10, 11);
+            arr[i] = new int[m];
+            for (int j = 0; j < m; j++) arr[i][j] = rnd.Next(-10, 11);
         }
 
         int maxCols = 0;
-        for (int i = 0; i < jagged.Length; i++)
-            if (jagged[i].Length > maxCols) maxCols = jagged[i].Length;
+        for (int i = 0; i < arr.Length; i++)
+            if (arr[i].Length > maxCols) maxCols = arr[i].Length;
 
         int[] result = new int[maxCols];
         for (int col = 0; col < maxCols; col++)
         {
             int sum = 0;
-            for (int row = 0; row < jagged.Length; row++)
-                if (col < jagged[row].Length && jagged[row][col] > 0 && jagged[row][col] % 2 == 0)
-                    sum += jagged[row][col];
+            for (int row = 0; row < arr.Length; row++)
+                if (col < arr[row].Length && arr[row][col] > 0 && arr[row][col] % 2 == 0)
+                    sum += arr[row][col];
             result[col] = sum;
         }
 
